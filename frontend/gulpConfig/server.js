@@ -1,7 +1,8 @@
 var express = require('express'),
     path    = require('./path'),
     gulp    = require('gulp'),
-    config  = require('./config.local');
+    config  = require('./config.local')
+    path    = require('path');
 
 var app = express();
 
@@ -13,8 +14,7 @@ var bs = browserSync.create();
 
 
 app.get('/',function(req,res){
-  //console.log(path.base + '/sitio' + '/index.html','<<<<');
-  res.sendFile("/home/wilson/proyectos/wilsson.github.io/_site/index.html");
+  res.sendFile(_path.resolve(__dirname+"/../../_site/index.html"));
 });
 
 
