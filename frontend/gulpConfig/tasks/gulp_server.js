@@ -8,26 +8,25 @@
  * 
  */
 
-function Task(gulp, path, plugins, config){
+function Task(gulp, path, plugins){
+  var jekyll = process.platform  === 'win32' ? 'jekyll.bat' : 'jekyll';
   gulp.task('jekyll-build', function (done) {
-    var jekyll = process.platform  === 'win32' ? 'jekyll.bat' : 'jekyll';
     return plugins.cp.spawn(jekyll, ['build'], {stdio: 'inherit',cwd: path.base})
         .on('close', done);
   });
 
   gulp.task('server',['jekyll-build'],function(){
-    var called = false ;
     return plugins.nodemon({
       script: 'gulpConfig/server.js'
     })
     .on('start',function(){
-      console.log('iniciando!');
+      console.log('start');
     })
     .on('restart',function(){
-      console.log('necesito un restart?');
+      console.log('restart');
     })
     .on('crash',function(){
-      console.log('se crasheo');
+      console.log('error');
     });
   });  
 };

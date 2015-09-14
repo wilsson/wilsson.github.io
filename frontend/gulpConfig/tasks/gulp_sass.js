@@ -8,12 +8,12 @@
  * 
  */
 
-function Task(gulp, path, plugins, config){
+function Task(gulp, path, plugins){
   gulp.task('sass',function(){
-    gulp.src(path.base + '/_sass/main.scss')
+    return gulp.src(path.base + '/_sass/main.scss')
     .pipe(plugins.sass().on('error',plugins.sass.logError))
     .pipe(gulp.dest(path.base + '/_site/css'))
-    .pipe(gulp.dest(path.base + '/css'))
+    .pipe(gulp.dest(path.base + '/css'));
   });  
 };
 

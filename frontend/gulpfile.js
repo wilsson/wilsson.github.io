@@ -1,11 +1,10 @@
 var gulp    = require('gulp'),
     path    = require('./gulpConfig/path'),
-    config  = require('./gulpConfig/config.local');
     plugins = require('./gulpConfig/plugins');
 
 var runTask = function(nameTask){
     var Task = require('./gulpConfig/tasks/' + nameTask);
-    Task(gulp,path,plugins,config);
+    Task(gulp,path,plugins);
 };
 
 runTask('gulp_sass');
