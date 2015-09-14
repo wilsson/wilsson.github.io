@@ -8,13 +8,5 @@ var runTask = function(nameTask){
     Task(gulp,path,plugins,config);
 };
 
-//runTask('gulp_clean');
-//runTask('gulp_sass');
+runTask('gulp_sass');
 runTask('gulp_server');
-//runTask('gulp_copy');
-
-/*
-gulp.task('default',function(){
-	plugins.runSequence('clean:css','css','copy:img')
-});
-*/
