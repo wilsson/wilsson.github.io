@@ -10,8 +10,8 @@
 
 function Task(gulp, path, plugins, config){
   gulp.task('jekyll-build', function (done) {
-    //browserSync.notify(messages.jekyllBuild);
-    return plugins.cp.spawn('jekyll', ['build'], {stdio: 'inherit',cwd: path.base})
+    var jekyll = process.platform  === 'win32' ? 'jekyll.bat' : 'jekyll';
+    return plugins.cp.spawn(jekyll, ['build'], {stdio: 'inherit',cwd: path.base})
         .on('close', done);
   });
 

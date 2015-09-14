@@ -2,7 +2,7 @@ var express = require('express'),
     path    = require('./path'),
     gulp    = require('gulp'),
     config  = require('./config.local')
-    path    = require('path');
+    _path   = require('path');
 
 var app = express();
 
