@@ -10,3 +10,5 @@ var runTask = function(nameTask){
 
 runTask('gulp_sass');
 runTask('gulp_server');
+
+gulp.task('default',['sass']);
