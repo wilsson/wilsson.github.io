@@ -4,7 +4,7 @@ email: wilsonft83@gmail.com
 description: wilson.github.io
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "wilsson.github.io" # the base hostname & protocol for your site
-twitter_username: @wilsson83
+twitter_username: wilsson83
 github_username:  wilsson
 
 # Build settings

@@ -9,18 +9,23 @@
  */
 
 function Task(gulp, path, plugins){
-  var jekyll = process.platform  === 'win32' ? 'jekyll.bat' : 'jekyll';
   gulp.task('jekyll-build', function (done) {
+    var jekyll = process.platform  === 'win32' ? 'jekyll.bat' : 'jekyll';
     return plugins.cp.spawn(jekyll, ['build'], {stdio: 'inherit',cwd: path.base})
         .on('close', done);
   });
 
   gulp.task('server',['jekyll-build'],function(){
     return plugins.nodemon({
-      script: 'gulpConfig/server.js'
+      script: 'gulpConfig/server.js',
     })
     .on('start',function(){
-      console.log('start');
+      console.log('server express ready - continued functions browserSync and watch');      
+      plugins.browserSync.init({
+        proxy: "http://localhost:" + 4000 + "/"
+      });
+      gulp.watch([path.base + '/_sass/*.scss'],['sass',plugins.browserSync.reload]);
+      gulp.watch([path.base +'/index.html', path.base+'/_layouts/*.html', path.base+'/_posts/*',path.base+'/_config.yml'], ['jekyll-build',plugins.browserSync.reload]);  
     })
     .on('restart',function(){
       console.log('restart');

@@ -15,16 +15,7 @@ app.get('/',function(req,res){
   res.sendFile(_path.resolve(path.base + '/_site/index.html'));
 });
 
+var bs = require('browser-sync').create();
 app.listen(config.port,function(){
-  console.log('ready!');
-  fnBrowserSync();
+  console.log('> ready - express <!');
 });
-
-var fnBrowserSync = function(){
-  bs.init({
-    proxy: "http://localhost:" + config.port + "/"
-  });
-
-  gulp.watch([_path.resolve(path.base + '/_sass/*.scss')],['sass',bs.reload]);
-  //gulp.watch([path.base +'/index.html', path.base+'/_layouts/*.html', path.base+'/_posts/*',path.base+'/_config.yml'], ['jekyll-build']);
-};
