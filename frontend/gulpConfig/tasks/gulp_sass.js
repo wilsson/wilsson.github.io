@@ -8,7 +8,7 @@
  * 
  */
 
-function Task(gulp, path, plugins){
+function Task(gulp, path, plugins, Config){
   gulp.task('sass',function(){
     return gulp.src(path.base + '/_sass/main.scss')
     .pipe(plugins.sass().on('error',plugins.sass.logError))

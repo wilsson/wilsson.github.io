@@ -1,9 +1,7 @@
 var Plugins = {
-    nodemon     : require('gulp-nodemon'),
     sass        : require('gulp-sass'),
     browserSync : require('browser-sync').create(),
-    cp          : require('child_process'),
-    runSequence : require('run-sequence')
+    cp          : require('child_process')
 }; 
 
 module.exports = Plugins

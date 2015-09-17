@@ -8,32 +8,45 @@
  * 
  */
 
-function Task(gulp, path, plugins){
-  gulp.task('jekyll-build', function (done) {
-    var jekyll = process.platform  === 'win32' ? 'jekyll.bat' : 'jekyll';
-    return plugins.cp.spawn(jekyll, ['build'], {stdio: 'inherit',cwd: path.base})
-        .on('close', done);
+function Task(gulp, path, plugins, config){
+  var jekyll = process.platform  === 'win32' ? 'jekyll.bat' : 'jekyll';
+  
+  /* express */
+  var express = require('express');
+  var app = express();
+  app.set('views', path.base);
+  app.use(express.static(path.base + '/_site'));
+
+  gulp.task('express',function(){
+    app.get('/',function(req,res){
+      res.sendFile(_path.resolve(path.base + '/_site/index.html'));
+    });
+
+    app.listen(config.port,function(){
+      console.log('> ready - express <!');
+    });
   });
 
-  gulp.task('server',['jekyll-build'],function(){
-    return plugins.nodemon({
-      script: 'gulpConfig/server.js',
-    })
-    .on('start',function(){
-      console.log('server express ready - continued functions browserSync and watch');      
-      plugins.browserSync.init({
-        proxy: "http://localhost:" + 4000 + "/"
-      });
-      gulp.watch([path.base + '/_sass/*.scss'],['sass',plugins.browserSync.reload]);
-      gulp.watch([path.base +'/index.html', path.base+'/_layouts/*.html', path.base+'/_posts/*',path.base+'/_config.yml'], ['jekyll-build',plugins.browserSync.reload]);  
-    })
-    .on('restart',function(){
-      console.log('restart');
-    })
-    .on('crash',function(){
-      console.log('error');
+  /* jekyll-build */
+  gulp.task('jekyll-build',function(cb){
+    return plugins.cp.spawn(jekyll, ['build'], {stdio: 'inherit',cwd: path.base})
+      .on('close', cb);
+  });
+
+  /* browserSync */
+  gulp.task('browserSync',function(){
+    plugins.browserSync.init({
+      proxy: "http://localhost:" + config.port + "/"
     });
-  });  
+  });
+
+  /* watch */
+  gulp.task('watch',function(){
+    gulp.watch([path.base + '/_sass/*.scss'],['sass',plugins.browserSync.reload]);
+    gulp.watch([path.base +'/index.html', path.base+'/_layouts/*.html', path.base+'/_posts/*',path.base+'/_config.yml'], ['jekyll-build',plugins.browserSync.reload]);  
+  });
+
+  gulp.task('server',['jekyll-build','express','browserSync','watch']);
 };
 
 module.exports = Task;
