@@ -1,3 +1,9 @@
+/**
+ *
+ *  gulpfile.js 
+ *
+ */
+
 var gulp    = require('gulp'),
     path    = require('./gulpConfig/path'),
     plugins = require('./gulpConfig/plugins'),
@@ -9,6 +15,10 @@ var runTask = function(nameTask){
 };
 
 runTask('gulp_sass');
-runTask('gulp_server');
+runTask('gulp_jekyll');
+runTask('gulp_express');
+runTask('gulp_browsersync');
+runTask('gulp_watch');
 
+gulp.task('server',['jekyll-build','express','browserSync','watch']);
 gulp.task('default',['sass']);
