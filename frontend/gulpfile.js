@@ -7,18 +7,16 @@
 var gulp    = require('gulp'),
     path    = require('./gulpConfig/path'),
     plugins = require('./gulpConfig/plugins'),
-    config  = require('./gulpConfig/config.local');
+    config  = require('./gulpConfig/config.local'), 
+    fs      = require('fs');
 
-var runTask = function(nameTask){
-    var Task = require('./gulpConfig/tasks/' + nameTask);
-    Task(gulp,path,plugins,config);
-};
+var tasks = fs.readdirSync('./gulpConfig/tasks');
+var task;
 
-runTask('gulp_sass');
-runTask('gulp_jekyll');
-runTask('gulp_express');
-runTask('gulp_browsersync');
-runTask('gulp_watch');
+for(var i=0;i<tasks.length;i++){
+    task = require('./gulpConfig/tasks/' + tasks[i]);
+    task(gulp,path,plugins,config);
+}
 
 gulp.task('server',['jekyll-build','express','browserSync','watch']);
 gulp.task('default',['sass']);
