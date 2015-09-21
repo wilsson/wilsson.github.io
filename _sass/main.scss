@@ -3,52 +3,95 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 */
-@charset "utf-8";
 
+@import "syntax-highlighting";
+@import "normalize";
 
-
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+.m-navigation{
+	width: 960px;
+	position: relative;
+	margin: 0 auto;
+	height: 50px;
+}
+.a-navigationTarget{
+	color:white;
+	text-decoration: none;;
+	line-height: 50px;
+	display: block;
+	padding: 0 10px;
+	font-size: 14px;
 }
 
+.a-navigationTarget:hover{
+	background-color: #c62828;
+}
 
+.a-navigationItem{
+	list-style: none;
+	float:left;
+}
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+.m-logo{
+	background-color: #c62828;
+	text-align: center;
+	height: 150px;
+}
+
+.a-logo{
+	padding: 50px 0;
+}
+
+.u-wrapper{
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*
+.o-footerMain{
+	height:5px;
+	background-color: #b71c1c;
+}
+*/
+
+.a-articlePost{
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	color:#333;
+	line-height: 36px;
+}
+
+/* base */
+nav{
+	background-color: #b71c1c;
+	overflow: auto;
+  	zoom: 1;
+}
+
+pre{
+	border: 1px solid #e8e8e8;
+	overflow-x:scroll;
+	padding: 8px 12px;
+	background-color: #eef;
+	font-size: 15px;
+	line-height: 25px
+}
+
+h1,h3,h4{
+	color:#424242;
+	font-family: 'Open Sans', sans-serif;
+}
+
+ul{
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #2a7ae2;
+}
+
+a:hover{
+	text-decoration: underline;
+}
