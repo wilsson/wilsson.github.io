@@ -154,6 +154,7 @@ module.publicMethod();
 - Código Escalable.
 
 Bien, ahora que ya tenemos los algunos conceptos definidos vamos a realizar un ejercicio la cual sera realizar tabs, con una estructura mas avanzada, vamos a realizarlo con jquery.
+
 #### 1. DEFINIMOS NUESTRA ESTRUCTURA HTML
 {% highlight html %}
 <ul class="tabs">
