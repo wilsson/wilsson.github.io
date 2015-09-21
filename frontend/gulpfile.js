@@ -11,12 +11,11 @@ var gulp    = require('gulp'),
     fs      = require('fs');
 
 var tasks = fs.readdirSync('./gulpConfig/tasks');
-var task;
 
-for(var i=0;i<tasks.length;i++){
-    task = require('./gulpConfig/tasks/' + tasks[i]);
+tasks.forEach(function(task){
+	task = require('./gulpConfig/tasks/' + task);
     task(gulp,path,plugins,config);
-}
+});
 
 gulp.task('server',['jekyll-build','express','browserSync','watch']);
 gulp.task('default',['sass']);
