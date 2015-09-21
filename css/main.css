@@ -474,18 +474,16 @@ td, th {
   padding: 0; }
 
 .m-navigation {
-  width: 960px;
-  position: relative;
-  margin: 0 auto;
-  height: 50px; }
+  height: 40px; }
 
 .a-navigationTarget {
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  line-height: 50px;
+  line-height: 40px;
   display: block;
   padding: 0 10px;
-  font-size: 14px; }
+  font-size: 14px;
+  font-weight: 600; }
 
 .a-navigationTarget:hover {
   background-color: #c62828; }
@@ -502,8 +500,11 @@ td, th {
 .a-logo {
   padding: 50px 0; }
 
+.u-navigationFixed {
+  position: fixed; }
+
 .u-wrapper {
-  width: 960px;
+  width: 750px;
   margin: 0 auto; }
 
 /*
@@ -514,7 +515,7 @@ td, th {
 */
 .a-articlePost {
   font-size: 20px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #333;
   line-height: 36px; }
 
@@ -540,7 +541,7 @@ pre {
 
 h1, h3, h4 {
   color: #424242;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif; }
 
 ul {
   padding: 0; }
@@ -554,3 +555,8 @@ a {
 
 a:hover {
   text-decoration: underline; }
+
+.fa.fa-calendar {
+  color: #424242;
+  font-size: 18px;
+  margin-right: 15px; }

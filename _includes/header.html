@@ -1,7 +1,7 @@
 <!--<header class="site-header">-->
 <header>
   <nav>
-    <ul class="m-navigation">
+    <ul class="m-navigation u-wrapper">
       {% for page in site.pages %}
         {% if page.title %}
           <li class="a-navigationItem"><a class="a-navigationTarget" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>

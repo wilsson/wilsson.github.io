@@ -9,4 +9,4 @@ github_username:  wilsson
 
 # Build settings
 markdown: kramdown
-exclude: ["frontend"]
+exclude: ["frontend",'js']
