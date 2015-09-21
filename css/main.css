@@ -518,6 +518,12 @@ td, th {
   color: #333;
   line-height: 36px; }
 
+.m-post {
+  border: 1px solid #E0E0E0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #F5F5F5; }
+
 /* base */
 nav {
   background-color: #b71c1c;
