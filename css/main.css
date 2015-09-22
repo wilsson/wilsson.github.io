@@ -473,6 +473,12 @@ table {
 td, th {
   padding: 0; }
 
+.u-fixedMenu {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
 .m-navigation {
   height: 40px; }
 

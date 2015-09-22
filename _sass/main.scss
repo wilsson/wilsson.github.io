@@ -6,7 +6,12 @@
 
 @import "syntax-highlighting";
 @import "normalize";
-
+.u-fixedMenu{
+	width: 100%;
+	position: fixed;
+	top:0;
+	left:0;
+}
 .m-navigation{
 //	width: 960px;
 //	position: relative;
