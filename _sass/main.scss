@@ -21,10 +21,12 @@
 	padding: 0 10px;
 	font-size: 14px;
 	font-weight:600;
+    transition:all 0.1s; 
 }
 
 .a-navigationTarget:hover{
 	background-color: #c62828;
+    text-decoration:none;
 }
 
 .a-navigationItem{
@@ -58,7 +60,6 @@
 
 .a-articlePost{
 	font-size: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
 	color:#333;
 	line-height: 36px;
 }
@@ -88,7 +89,6 @@ pre{
 
 h1,h3,h4{
 	color:#424242;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 
 ul{
