@@ -1,49 +1,49 @@
-var menu = function(){
+var menu = (function(){
     var dom = {};
     var st = {
-        nav : 'nav',
-        offSetVal : null
+        nav         : 'nav',
+        isScroll     : null,
+        navHeight : null,
+        lastScroll   : 0
     };
     var catchDom = function(){
-        dom.nav = $(st.nav);
-    };
-    var afterCatchDom = function(){
-        st.offSetVal = dom.nav.offset().top;
-        console.log('offset actual ->',st.offSetVal);
+        st.navHeight = $(st.nav).outerHeight();
+        dom.nav = $(st.nav)
     };
     var suscribeEvents = function(){
-        $(document).on('scroll',events.eMenu);
+        $(window).on('scroll',events.eWIndowScroll);
+        setInterval(function(){
+            if(st.isScroll == true){
+                functions.hasSrolled();
+                st.isScroll = false;
+            }
+        },250);
     };
     var events = {
-        eMenu : function(){
-            //dom.nav.addClass('u-fixedMenu');
-            console.log('scroll',dom.nav.offset.top);
-            /*
-            if(dom.nav.offset().top == 0){
-                console.log('offset nav igual a 0');
-                dom.nav.removeClass('u-fixedMenu', 'el actual es mayor');
-            }
-            */
-            /*
-            if((dom.nav.offset().top < st.offSetVal) || dom.nav.offset().top == 0){
-                dom.nav.addClass('u-fixedMenu');
-                //console.log('scroll',dom.nav.offset(), 'el actual es menor que cuando hace scroll o es 0');
-                st.offSetVal = dom.nav.offset().top;
+        eWIndowScroll : function(){
+           st.isScroll = true;
+        }
+    };
+	var functions = {
+        hasSrolled : function(){
+            var sto = $(window).scrollTop();
+            if(sto > st.lastScroll && sto > st.navHeight){
+                dom.nav.addClass('u-scrollUp');
             }else{
-                dom.nav.removeClass('u-fixedMenu');
+                console.log('es menor');
+                if(sto+$(window).height() < $(document).height()){
+                    dom.nav.removeClass('u-scrollUp');
+                }
             }
-            */
-            
+            st.lastScroll = sto;
         }
     };
     var initialize = function(){
-        console.log('fixed menu');
         catchDom();
-        afterCatchDom();
         suscribeEvents();
     };
     return{
         init:initialize
     }
-}
-menu().init();
+})();
+menu.init();
