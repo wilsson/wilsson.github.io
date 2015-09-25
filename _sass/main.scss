@@ -3,9 +3,13 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 */
-
+//@import "breakpoint";
+@import "breakpoint-slicer";
 @import "syntax-highlighting";
 @import "normalize";
+
+$slicer-breakpoints: 0 400px 600px 800px 1050px;
+
 .u-fixedMenu{
 	width: 100%;
 	position: fixed;
@@ -121,9 +125,16 @@ a{
 a:hover{
 	text-decoration: underline;
 }
-
-.fa.fa-calendar{
-  color:#424242;
-  font-size:18px;
-  margin-right:15px;
+.fa.fa-calendar {
+    color: #424242;
+    font-size: 18px;
+    margin-right: 15px;
 }
+.u-wrapper {
+  @include to(2) {
+    width:100%;
+    padding: 0 20px;
+    box-sizing:border-box;
+  }
+}
+

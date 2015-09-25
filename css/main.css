@@ -578,3 +578,9 @@ a:hover {
   color: #424242;
   font-size: 18px;
   margin-right: 15px; }
+
+@media (max-width: 600px) {
+  .u-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box; } }
