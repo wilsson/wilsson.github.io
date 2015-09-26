@@ -18,7 +18,8 @@ function Task(gulp, path, plugins, Config){
                   [
                       './bower_components/compass-breakpoint/stylesheets',
                       './bower_components/breakpoint-slicer/stylesheets'
-                  ]
+                  ],
+                  outputStyle:'compressed'
               }
           ).on('error',plugins.sass.logError))
     .pipe(gulp.dest(path.base + '/_site/css'))
