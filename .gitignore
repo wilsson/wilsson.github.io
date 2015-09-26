@@ -1,4 +1,4 @@
 _site
 .sass-cache
 /frontend/node_modules
-/frontend/bower-components
+/frontend/bower_components
