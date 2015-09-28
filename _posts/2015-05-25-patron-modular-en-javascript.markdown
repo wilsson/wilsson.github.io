@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Patrón modular en javascript"
+title:  Patrón modular en javascript
 date:   2015-05-25 12:00:35
 categories: javascript 
 permalink: patron-modular-en-javascript

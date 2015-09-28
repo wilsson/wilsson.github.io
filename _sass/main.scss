@@ -79,6 +79,9 @@ $slicer-breakpoints: 0 400px 600px 800px 1050px;
 	border-radius: 5px;
 	background-color: #F5F5F5;
 }
+.m-post + .m-post{
+	margin-top: 10px;
+}
 .u-scrollUp{
   top:-40px;
 }
