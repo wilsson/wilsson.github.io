@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Sass tu css con poderes
+title: Sass, tu css con poderes
 permalink: sas-tu-css-con-poderes
 ---
-Existen muchos precompiladores css, en esta ocación hablaremos de sass.
+Existen muchos precompiladores css, en esta ocasión hablaremos de sass.
 
-Antes de poder empezar con Sass usted tendra que tener instalado Ruby, si stas en una distribucion linux puedes hacerlo desde el manejador de paquetes **apt**, si estas usando windows, usted puede usar [Ruby installer][1].
+Antes de poder empezar con Sass usted tendrá que tener instalado Ruby, si estas en una distribución linux puedes hacerlo desde el manejador de paquetes **apt**, si estas usando windows, usted puede usar [Ruby installer][1].
 
 Ruby utiliza gemas para gestionar sus diversos paquetes de codigo como Sass, si usas linux utiliza **sudo**.
 
@@ -86,7 +86,7 @@ nav{
 // menu.scss
 @import 'menu';
 article{
-	padding:20px;
+    padding:20px;
 }
 {% endhighlight %}
 Nótese que al importar el archivo **menu.scss** en **main.scss** no estamos usando la extensión **.scss** y como resultado obtenemos.
@@ -124,6 +124,49 @@ Obtenemos como resultado.
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   border-radius: 5px; 
+}
+{% endhighlight %}
+##Extend/Inheritance
+Usando extend te permite compartir un conjunto de propiedades css de un selector a otro.
+Supongamos que tenemos 2 botones.
+
+{% highlight Css %}
+.button{
+  border:1px solid #444;
+  background-color:white;
+  color:black;
+  }
+
+.button-prymary{
+  @extend .button;
+  background-color:chocolate;
+}
+{% endhighlight %}
+Obtenemos como resultado.
+{% highlight Css %}
+.button,
+.button-prymary {
+  border: 1px solid #444;
+  background-color: white;
+  color: black;
+}
+.button-prymary {
+  background-color: chocolate;
+}
+{% endhighlight %}
+##Operators
+Sass contiene un monton de operadores matematicos (+ , - , * , / , %) que nos facilitaran la vida al momento de crear nuestras hojas de estilos.
+
+{% highlight Css %}
+$width-primary:980px; 
+.card{
+    width:$width-primary/2;
+}
+{% endhighlight %}
+Obtenemos lo siguiente.
+{% highlight Css %}
+.card{
+    width:490;
 }
 {% endhighlight %}
 
