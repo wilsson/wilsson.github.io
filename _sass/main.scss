@@ -93,21 +93,45 @@ nav{
     transition:all 0.2s ease;
 	background-color: #cb3837;
     position:fixed;
-    top:0;
     width:100%;
+    top:0;
+    z-index:1;
 /*
     overflow: auto;
   	zoom: 1;
     */
 }
 
+ pre {
+     counter-reset: line-numbering;
+ }
+ 
+ pre span.lineno::after {
+ 	content: counter(line-numbering, decimal-leading-zero);
+ 	counter-increment: line-numbering;
+ 	opacity: 0.4;
+ 	-webkit-touch-callout: none;
+ 	-webkit-user-select: none;
+ 	-khtml-user-select: none;
+ 	-moz-user-select: none;
+ 	-ms-user-select: none;
+ 	user-select: none;
+ 	visibility: visible;
+ 	margin-left: -1em;
+ }
+ 
+ pre span.lineno {
+ 	visibility: collapse;
+ 	text-align: right;
+ 	display: inline-block;
+ 	min-width: 1em;
+ }
 pre{
-	border: 1px solid #e8e8e8;
-	overflow-x:scroll;
-	padding: 8px 12px;
-	background-color: #eef;
-	font-size: 15px;
-	line-height: 25px
+  font-size:12px;
+  line-height:18px;
+  border-radius:3px;
+  border: 1px solid #d8d8d8;
+  padding:5px 10px;
 }
 
 h1,h3,h4{
@@ -140,4 +164,3 @@ a:hover{
     box-sizing:border-box;
   }
 }
-
