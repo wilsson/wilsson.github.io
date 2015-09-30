@@ -27,7 +27,7 @@ Sass tiene 2 sintaxis, **scss** y **sass**, para los los ejemplos se usara la si
 
 ##Variables
 Imagine las variables como si fuesen cajitas donde usted almacenara algo que despues usara, en sass es igual, en dichas cajitas usted almacenara información que desea volver a utilizar a lo largo de sus hojas de estilos, para crear una variable ponga el simbolo **$** al inicio del nombre de la variable.
-{% highlight Css %}
+{% highlight Bash %}
 $primary-color: #444;
 
 h1{
@@ -40,12 +40,11 @@ h1{
   color:#444;
 }
 {% endhighlight %}
-
 ## Nesting
 Seguro usted a notado que el html tiene una jerarquia anidada, *css* por otra parte no lo tiene.
 
 Sass le permitira anidamiento(nesting) de sus selectores, tenga en cuenta que las reglas excesivas de anidamiento se traducira en más css, se recomienda 3 niveles de anidamiento como maximo.
-{% highlight Css %}
+{% highlight Bash %}
 article{
   h2{
     color:#444;
@@ -65,11 +64,65 @@ article a{
   font-size:14px;  
 }
 {% endhighlight%}
+Muchas veces en css nos encontramos con propiedades que empiezan con el mismo nombre seguido de **"-"** y luego el resto del nombre, como por ejemplo.
+{% highlight Css %}
+article {
+  border-color: black;
+  border-style: solid;
+  border-width: 4px;
+}
+{% endhighlight %}
+Claro esta  podemos que podemos usar la sintaxis abreviada.
+{% highlight Css %}
+article{
+  border: 4px solid black;
+}
+{% endhighlight %}
+Nuestro amigo sass nos brinda la posibilidad de  hacer **Nested Properties**, que se trata de utilizar una sintaxis diferente para este tipo de propiedades.
+
+Para poder lograrlo solo tenemos que escribir nuestro nombre generico de la propiedad, seguido de **":"** , dentro de el  se colocara todo el bloque de propiedades especificas.
+{% highlight Bash %}
+article{
+  border:{
+    color:black;
+    style:solid;
+    width:4px;
+  }
+}
+{% endhighlight %}
+Lo que nos dara como resultado.
+{% highlight Css %}
+article {
+  border-color: black;
+  border-style: solid;
+  border-width: 4px;
+}
+{% endhighlight %}
+Hay más, tambien nos permite una jerarquización de varios niveles de profundidad
+{% highlight Bash %}
+article{
+  border:{
+    top:{
+      style:solid;
+      left:{
+        radius:5px;
+      }
+    }
+  }
+}
+{% endhighlight %}
+Que nos dara de resultado.
+{% highlight Css %}
+article {
+  border-top-style: solid;
+  border-top-left-radius: 5px;
+}
+{% endhighlight %}
 ## Import
 Sass tambien te permite importar al igual que **css**, la diferencia es que en el **css** cada vez que utilices **@import**, css crea otra petición HTTP, en cambio **sass** simplemente tomará el archivo que deseas importar y lo combinara con el archivo que está importandolo para que pueda servir a un solo archivo **css**.
 
 Supongamos que tenemos un archivo **menu.scss** y lo queramos importar en **main.scss**
-{% highlight Css %}
+{% highlight Bash %}
 // menu.scss
 nav{
   ul{
@@ -82,7 +135,7 @@ nav{
 }
 {% endhighlight %}
 
-{% highlight Css %}
+{% highlight Bash %}
 // menu.scss
 @import 'menu';
 article{
@@ -105,7 +158,7 @@ article {
 Un mixin nos permite crear bloques reutilizables de css, esto nos ayudara a escribir código repetitivo.
 
 Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, tambien usamos **$** para la variable dentro de los paréntesis, después de crear su mixin, puede utilizarlo como una declaración css comenzando con **@include**, seguido del nombre del mixin.
-{% highlight Css %}
+{% highlight Bash %}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -126,38 +179,41 @@ Obtenemos como resultado.
   border-radius: 5px; 
 }
 {% endhighlight %}
-##Extend/Inheritance
+##Extend/inheritance
 Usando extend te permite compartir un conjunto de propiedades css de un selector a otro.
-Supongamos que tenemos 2 botones.
+{% highlight Bash %}
+.box{
+  background-color:black;
+  color:white;
+}
 
-{% highlight Css %}
-.button{
-  border:1px solid #444;
-  background-color:white;
-  color:black;
-  }
-
-.button-prymary{
-  @extend .button;
-  background-color:chocolate;
+.card{
+  @extend .box;
+  font-size:16px;
+}
+.card-notice{
+  @extend .box;
+  background-color:red;
 }
 {% endhighlight %}
-Obtenemos como resultado.
+Lo que nos dara de resultado.
 {% highlight Css %}
-.button,
-.button-prymary {
-  border: 1px solid #444;
-  background-color: white;
-  color: black;
+.box, .card, .card-notice {
+  background-color: black;
+  color: white;
 }
-.button-prymary {
-  background-color: chocolate;
+
+.card {
+  font-size: 16px;
+}
+
+.card-notice {
+  background-color: red;
 }
 {% endhighlight %}
 ##Operators
 Sass contiene un monton de operadores matematicos (+ , - , * , / , %) que nos facilitaran la vida al momento de crear nuestras hojas de estilos.
-
-{% highlight Css %}
+{% highlight Bash %}
 $width-primary:980px; 
 .card{
     width:$width-primary/2;
