@@ -9,11 +9,11 @@ En el mundo de javascript existen muchas facilidades de programar, el único det
 
 En javascript el patrón modular emula el concepto de clases, de manera que somos capaces de incluir métodos públicos/privados y propiedades dentro de un único objeto, protegiendo las datos particulares del ámbito global, lo que ayuda a evitar la colisión de nombres de funciones y variables ya definidas a lo largo de nuestro proyecto, o API’s de terceros, a continuación unos conceptos previos para poder entender mejor el patrón modular.
 
-### Objeto literal
+## Objeto literal
 EL patrón modular se basa en parte en los objetos literales por ende es importante entenderlo.
 Un objeto literal es descrito como cero o más pares nombre/valor, separados por comas entre llaves.
 Los nombres dentro del objeto pueden ser cadenas o identificadores que son seguidas por 2 puntos, dichos objetos también pueden contener otros objetos y funciones.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var objetoLiteral = {
     /* los objetos literales pueden contener propiedades y métodos */
     saludo : "soy un objeto literal",
@@ -25,7 +25,7 @@ var objetoLiteral = {
 objectLiteral.saludo
 {% endhighlight %}
 Un ejemplo de un módulo usando un objeto literal.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var persona = {
     /* definiendo propiedades */
     nombre : "adan",
@@ -38,16 +38,16 @@ var persona = {
 /* accediendo al método comer de nuestro objeto literal persona */
 persona.comer();
 {% endhighlight %}
-#### Módulo
+## Módulo
 Un módulo es una unidad independiente funcional que forma parte de la estructura de una aplicación.
 Podemos usar funciones y closures(cierres) para crear módulos.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var modulo = (function(){
     //- - -
 });
 {% endhighlight %}
 Un ejemplo más completo:
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var automovil = (function(colorDeAuto){
     var color = colorDeAuto;
     return{
@@ -64,17 +64,17 @@ var automovil = (function(colorDeAuto){
 automovil.retroceder();
 automovil.avanzar();
 {% endhighlight %}
-#### Función anónima
+## Función anónima
 Las funciónes anónimas son funciónes sin nombre, comúnmente asociados a una variable.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var miFuncionAnonima = function(){
     alert("Hola mundo!");
 };
 miFuncionAnonima();
 {% endhighlight %}
-#### Funciones auto-ejecutables (IIFE)
+## Funciones auto-ejecutables (IIFE)
 Estas funciónes una vez declaradas se llaman a sí mismas para inicializarse, los primeros paréntesis encierran el contenido, los segundos paréntesis asumen que el interior de los primeros paréntesis es una función y la ejecuta inmediatamente.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 /* 01 */
 (function(){
     alert("Hello World!");
@@ -91,9 +91,9 @@ var myAnonymousFunction = (function(message){
 })("hello world");
 // todo lo que le precede a los 2 últimos paréntesis se ejecuta inmediatamente
 {% endhighlight %}
-#### Clousure
+## Clousure
 Los clousures son funciones definidas dentro de otras funciones, así mismo dicha función interna tiene acceso al ámbito de la función contenedora.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 function ejemploClousure(arg1, arg2){
     var localVar = 8;
     function multiplicador(interArg){
@@ -110,9 +110,9 @@ var globalVar = ejemploClousure(2,4);
 /* y luego llamar a */
 globalVar(8);
 {% endhighlight %}
-#### Métodos privados
+## Métodos privados
 Los métodos privados son funciones que no pueden ser llamados desde fuera del ámbito donde han sido declarados, dichos métodos podrán ser invocados en nuestros métodos públicos.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var modulo = (function () {
     var privateMethod = function (message1) {
         console.log(message1);
@@ -128,9 +128,9 @@ var modulo = (function () {
 /* pasando datos a un método privado */
 modulo.publicMethod("mi mensaje");
 {% endhighlight %}
-#### Entendiendo el retorno
+## Entendiendo el retorno
 Comúnmente los módulos retornan un objeto, la cual los métodos ligados a dicho objeto serán accesibles desde fuera del módulo.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var module = (function(){
     /* simple método privado */
     var privateMethod = function(){
@@ -148,15 +148,15 @@ var module = (function(){
 /* accediendo nuestro método publico */
 module.publicMethod();
 {% endhighlight %}
-#### Ventajas del patrón modular
+## Ventajas del patrón modular
 - Código limpio , separado y organizado.
 - Soportan datos privados.
 - Código Escalable.
 
-Bien, ahora que ya tenemos los algunos conceptos definidos vamos a realizar un ejercicio la cual sera realizar tabs, con una estructura mas avanzada, vamos a realizarlo con jquery.
+Bien, ahora que ya tenemos los algunos conceptos definidos vamos a realizar un ejercicio la cual sera realizar tabs, con una estructura más avanzada, vamos a realizarlo con jquery.
 
-#### 1. DEFINIMOS NUESTRA ESTRUCTURA HTML
-{% highlight html %}
+## 1. Definimos nuestra estructura html.
+{% highlight html linenos %}
 <ul class="tabs">
     <li class="tabs_item">
         <a class="tabs_item_target is_selected" data-tab="tab_one">JavaScript</a>
@@ -180,10 +180,10 @@ Bien, ahora que ya tenemos los algunos conceptos definidos vamos a realizar un e
     </div>
 </div>
 {% endhighlight %}
-#### 2. DEFINIMOS NUESTRA ESTRUCTURA JAVASCRIPT
+## 2. Definimos nuestra estructura javascript.
 A continuación se muestra una estructura modular mas avanzada y explicaremos paso a paso las partes que la componen.
 
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 // Definimos la variable tabs la cual contendrá todo nuestro modulo.
 var tabs = (function(){
     // Objeto la cual establecemos valores que vamos a usar mas adelante en este ámbito.
@@ -225,9 +225,9 @@ var tabs = (function(){
 // Ejecutando el método "init" del módulo tabs.
 tabs.init();
 {% endhighlight %}
-#### 3. CREACIÓN DE NUESTRO MODULO
+## 3. Creación de nuestro modulo.
 Finalmente luego de haber entendido nuestra estructura anterior, procedemos a la creación de nuestro modulo tabs.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var tabs = (function(){
     var st = {
         tabs             : '.tabs',
@@ -269,7 +269,7 @@ var tabs = (function(){
 
 tabs.init();
 {% endhighlight %}
-#### Referencias
+## Referencias
 - [Learning JavaScript Design Patterns][1]
 - [JavaScript: The Good Parts][2]
 
