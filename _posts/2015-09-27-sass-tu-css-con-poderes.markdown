@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sass, tu css con poderes
+categories: css
 permalink: sas-tu-css-con-poderes
 ---
 Existen muchos precompiladores css, en esta ocasión hablaremos de sass.
