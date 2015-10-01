@@ -4,7 +4,7 @@ title: Sass, tu css con poderes
 categories: css
 permalink: sas-tu-css-con-poderes
 ---
-Existen muchos precompiladores css, en esta ocasión hablaremos de sass.
+Existen muchas herramientas que nos ayudan en el dia a dia como desarrollador, y en la parte css que nos ayudan a la hora de escribir estilos, y en esta ocasión hablaremos sobre sass.
 
 Antes de poder empezar con Sass usted tendrá que tener instalado Ruby, si estas en una distribución linux puedes hacerlo desde el manejador de paquetes **apt**, si estas usando windows, usted puede usar [Ruby installer][1].
 
