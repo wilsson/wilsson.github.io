@@ -227,7 +227,7 @@ tabs.init();
 {% endhighlight %}
 ## 3. Creación de nuestro modulo.
 Finalmente luego de haber entendido nuestra estructura anterior, procedemos a la creación de nuestro modulo tabs.
-{% highlight JavaScript %}
+{% highlight JavaScript linenos %}
 var tabs = (function(){
     var st = {
         tabs             : '.tabs',
