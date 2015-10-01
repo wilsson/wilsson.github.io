@@ -9,7 +9,7 @@ Antes de poder empezar con Sass usted tendrá que tener instalado Ruby, si estas
 
 Ruby utiliza gemas para gestionar sus diversos paquetes de codigo como Sass, si usas linux utiliza **sudo**.
 
-{% highlight Bash %}
+{% highlight Console %}
 gem install sass
 {% endhighlight %}
 
