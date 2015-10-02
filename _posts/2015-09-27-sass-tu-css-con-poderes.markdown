@@ -4,17 +4,17 @@ title: Sass, tu css con poderes
 categories: css
 permalink: sas-tu-css-con-poderes
 ---
-Existen muchas herramientas que nos ayudan en el dia a dia como desarrollador, y en la parte css que nos ayudan a la hora de escribir estilos, y en esta ocasión hablaremos sobre sass.
+En este post les presentare a un gran amigo llamado **Sass**, pero qué es Sass?, se preguntaran muchos, bueno de **sass** podemos decir que es un metalenguaje css, pero no solo eso, ya que nos brinda una serie de poderes fantásticos para poder generar nuestro css.
 
-Antes de poder empezar con Sass usted tendrá que tener instalado Ruby, si estas en una distribución linux puedes hacerlo desde el manejador de paquetes **apt**, si estas usando windows, usted puede usar [Ruby installer][1].
+Antes de poder empezar con Sass usted tendrá que tener instalado Ruby, si estas en una distribución linux puedes hacerlo desde el manejador de paquetes **apt**, si estás usando windows, usted puede usar [Ruby installer][1].
 
-Ruby utiliza gemas para gestionar sus diversos paquetes de codigo como Sass, si usas linux utiliza **sudo**.
+Ruby utiliza gemas para gestionar sus diversos paquetes de código como Sass, si usas linux utiliza **sudo**.
 
 {% highlight Console %}
 gem install sass
 {% endhighlight %}
 
-Bueno ahora que ya tenemos todos ingredientes para trabajar proseguiremos a explicar algunas de sus caracteristicas.
+Bueno ahora que ya tenemos todos ingredientes para trabajar proseguiremos a explicar algunas de sus características.
 
 > - *Variables*
 > - *Nesting*
@@ -27,7 +27,7 @@ Bueno ahora que ya tenemos todos ingredientes para trabajar proseguiremos a expl
 Sass tiene 2 sintaxis, **scss** y **sass**, para los los ejemplos se usara la sintaxis scss.
 
 ## Variables
-Imagine las variables como si fuesen cajitas donde usted almacenara algo que despues usara, en sass es igual, en dichas cajitas usted almacenara información que desea volver a utilizar a lo largo de sus hojas de estilos, para crear una variable ponga el simbolo **$** al inicio del nombre de la variable.
+Imagine las variables como si fuesen cajitas donde usted almacenará algo que después usará, en sass es igual, en dichas cajitas usted almacenará información que desea volver a utilizar a lo largo de sus hojas de estilos, para crear una variable ponga el simbolo **$** al inicio del nombre de la variable.
 {% highlight Scss linenos %}
 $primary-color: #444;
 
@@ -35,16 +35,16 @@ h1{
   color: $primary-color;
 }
 {% endhighlight %}
-Una vez compilado tu hoja de estilos en sass, tendra como resultado el css siguiente.
+Una vez compilado tu hoja de estilos en sass, tendrá como resultado el css siguiente.
 {% highlight Css linenos %}
 h1{
   color:#444;
 }
 {% endhighlight %}
 ## Nesting
-Seguro usted a notado que el html tiene una jerarquia anidada, *css* por otra parte no lo tiene.
+Seguro usted a notado que el html tiene una jerarquía anidada, **css** por otra parte no lo tiene.
 
-Sass le permitira anidamiento(nesting) de sus selectores, tenga en cuenta que las reglas excesivas de anidamiento se traducira en más css, se recomienda 3 niveles de anidamiento como maximo.
+Sass si te permitirá anidamiento(nesting) de sus selectores, tenga en cuenta que las reglas excesivas de anidamiento se traducirá en más css, se recomienda 3 niveles de anidamiento como máximo.
 {% highlight Scss linenos %}
 article{
   h2{
@@ -65,7 +65,7 @@ article a{
   font-size:14px;  
 }
 {% endhighlight%}
-Muchas veces en css nos encontramos con propiedades que empiezan con el mismo nombre seguido de **"-"** y luego el resto del nombre, como por ejemplo.
+También muchas veces en css nos encontramos con propiedades que empiezan con el mismo nombre seguido de un guión y luego el resto del nombre, como por ejemplo.
 {% highlight Css linenos%}
 article {
   border-color: black;
@@ -81,7 +81,7 @@ article{
 {% endhighlight %}
 Nuestro amigo sass nos brinda la posibilidad de  hacer **Nested Properties**, que se trata de utilizar una sintaxis diferente para este tipo de propiedades.
 
-Para poder lograrlo solo tenemos que escribir nuestro nombre generico de la propiedad, seguido de **":"** , dentro de el  se colocara todo el bloque de propiedades especificas.
+Para poder lograrlo solo tenemos que escribir nuestro nombre genérico de la propiedad, seguido de dos puntos (**:**), dentro de él  se colocara todo el bloque de propiedades específicas.
 {% highlight Scss linenos %}
 article{
   border:{
@@ -99,7 +99,7 @@ article {
   border-width: 4px;
 }
 {% endhighlight %}
-Hay más, tambien nos permite una jerarquización de varios niveles de profundidad
+Hay más, también nos permite una jerarquización de varios niveles de profundidad.
 {% highlight Scss linenos %}
 article{
   border:{
@@ -120,7 +120,7 @@ article {
 }
 {% endhighlight %}
 ## Import
-Sass tambien te permite importar al igual que **css**, la diferencia es que en el **css** cada vez que utilices **@import**, css crea otra petición HTTP, en cambio **sass** simplemente tomará el archivo que deseas importar y lo combinara con el archivo que está importandolo para que pueda servir a un solo archivo **css**.
+Sass tambien te permite importar al igual que **css**, la diferencia es que en el **css** cada vez que utilices **@import**, css crea otra petición HTTP, en cambio **sass** simplemente tomará el archivo que deseas importar y lo combinara con el archivo que está importando para que pueda servir a un solo archivo **css**.
 
 Supongamos que tenemos un archivo **menu.scss** y lo queramos importar en **main.scss**
 {% highlight Scss linenos %}
@@ -156,9 +156,9 @@ article {
 }
 {% endhighlight %}
 ## Mixins
-Un mixin nos permite crear bloques reutilizables de css, esto nos ayudara a escribir código repetitivo.
+Un mixin nos permite crear bloques reutilizables de css, esto nos ayudará a escribir código repetitivo.
 
-Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, tambien usamos **$** para la variable dentro de los paréntesis, después de crear su mixin, puede utilizarlo como una declaración css comenzando con **@include**, seguido del nombre del mixin.
+Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, también usamos **$** para la variable dentro de los paréntesis, después de crear su mixin, puede utilizarlo como una declaración css comenzando con **@include**, seguido del nombre del mixin.
 {% highlight Scss linenos %}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
