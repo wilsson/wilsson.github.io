@@ -156,9 +156,7 @@ article {
 }
 {% endhighlight %}
 ## Mixins
-Un mixin es un bloque de codigo que puede ser reutilizado.
-
-Un mixin nos permitira definir varias reglas dependiendo de los argumento(s).
+Podemos decir de un mixin que es un bloque de codigo que puede ser reutilizado, tambien nos permite definir varias reglas dependiendo de los argumentos(s).
 
 Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, también usamos **$** para la variable dentro de los paréntesis, después de crear su mixin, puede utilizarlo como una declaración css comenzando con **@include**, seguido del nombre del mixin.
 
