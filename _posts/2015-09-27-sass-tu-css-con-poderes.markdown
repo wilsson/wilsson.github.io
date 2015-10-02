@@ -156,9 +156,12 @@ article {
 }
 {% endhighlight %}
 ## Mixins
-Un mixin nos permite crear bloques reutilizables de css, esto nos ayudará a escribir código repetitivo.
+Un mixin es un bloque de codigo que puede ser reutilizado.
+
+Un mixin nos permitira definir varias reglas dependiendo de los argumento(s).
 
 Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, también usamos **$** para la variable dentro de los paréntesis, después de crear su mixin, puede utilizarlo como una declaración css comenzando con **@include**, seguido del nombre del mixin.
+
 {% highlight Scss linenos %}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;

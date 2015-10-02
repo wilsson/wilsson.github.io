@@ -91,15 +91,11 @@ body{
 }
 nav{
     transition:all 0.2s ease;
-  background-color: #cb3837;
+    background-color: #cb3837;
     position:fixed;
     width:100%;
     top:0;
     z-index:1;
-/*
-    overflow: auto;
-    zoom: 1;
-    */
 }
 /* tech para los contadores */
 pre {
@@ -136,6 +132,16 @@ pre{
   padding:5px 10px;
 }
 /******/
+strong{
+  border: 1px solid #d8d8d8;
+  color: #cb3837;
+  font-size:12px;
+  font-family:monospace, monospace;
+  padding:2px 4px;
+  border-radius:3px;
+  vertical-align:bottom;
+}
+/**/
 h1,h3,h4{
   color:#424242;
 }
