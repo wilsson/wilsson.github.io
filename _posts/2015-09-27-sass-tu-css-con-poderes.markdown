@@ -198,7 +198,7 @@ EL extend te permite compartir un conjunto de propiedades css de un selector a o
   background-color:red;
 }
 {% endhighlight %}
-Lo que nos dara de resultado.
+Lo que nos dará de resultado.
 {% highlight Css linenos %}
 .box, .card, .card-notice {
   background-color: black;
@@ -213,8 +213,37 @@ Lo que nos dara de resultado.
   background-color: red;
 }
 {% endhighlight %}
+Un único selector puede extender múltiples selectores.
+{% highlight Scss linenos %}
+.message{
+  border:1px solid black;
+  background-color:#ccc;
+}
+
+.font-global{
+  font-size:14px;
+  font-weight:bold;
+}
+
+.message-error{
+  @extend .message;
+  @extend .font-global;
+}
+{% endhighlight %}
+Lo que nos dára resultado.
+{% highlight Css linenos %}
+.message, .message-error {
+  border: 1px solid black;
+  background-color: #ccc;
+}
+
+.font-global, .message-error {
+  font-size: 14px;
+  font-weight: bold;
+}
+{% endhighlight %}
 ## Operators
-Sass contiene un monton de operadores matematicos (+ , - , * , / , %) que nos facilitaran la vida al momento de crear nuestras hojas de estilos.
+Sass contiene un montón de operadores matemáticos (+ , - , * , / , %) que nos facilitaran la vida al momento de crear nuestras hojas de estilos.
 {% highlight Scss linenos %}
 $width-primary:980px; 
 .card{
@@ -227,5 +256,8 @@ Obtenemos lo siguiente.
     width:490;
 }
 {% endhighlight %}
+## Referencias
+- [Sass][2]
 
 [1]:http://rubyinstaller.org/
+[2]:http://sass-lang.com/
