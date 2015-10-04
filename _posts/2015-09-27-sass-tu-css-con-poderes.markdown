@@ -156,9 +156,9 @@ article {
 }
 {% endhighlight %}
 ## Mixins
-Podemos decir de un mixin que es un bloque de codigo que puede ser reutilizado, tambien nos permite definir varias reglas dependiendo de los argumentos(s).
+Los mixins te permiten definir bloques de estilos que pueden ser reutilizados en toda la hoja de estilo, sin necesidad de recurrir a las clases, incluso pueden tener argumentos.
 
-Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, también usamos **$** para la variable dentro de los paréntesis, después de crear su mixin, puede utilizarlo como una declaración css comenzando con **@include**, seguido del nombre del mixin.
+Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, después de crear su mixin, puede utilizarlo como una declaración css comenzando con **@include**, seguido del nombre del mixin.
 
 {% highlight Scss linenos %}
 @mixin border-radius($radius) {
@@ -168,7 +168,7 @@ Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, tamb
           border-radius: $radius;
 }
 
-.card { 
+.card¿ { 
   @include border-radius(5px); 
 }
 {% endhighlight %}
@@ -182,7 +182,7 @@ Obtenemos como resultado.
 }
 {% endhighlight %}
 ## Extend/inheritance
-Usando extend te permite compartir un conjunto de propiedades css de un selector a otro.
+EL extend te permite compartir un conjunto de propiedades css de un selector a otro.
 {% highlight Scss linenos %}
 .box{
   background-color:black;
