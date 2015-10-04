@@ -168,7 +168,7 @@ Para poder crear un mixin utiliza la directiva **@mixin** y dale un nombre, desp
           border-radius: $radius;
 }
 
-.card¿ { 
+.card{ 
   @include border-radius(5px); 
 }
 {% endhighlight %}
