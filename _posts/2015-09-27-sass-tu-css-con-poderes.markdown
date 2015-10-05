@@ -256,6 +256,16 @@ Obtenemos lo siguiente.
     width:490;
 }
 {% endhighlight %}
+Para poder utilizar sass desde la línea de comandos, ejecuta **sass**
+{% highlight Console %}
+sass demo.scss demo.css
+{% endhighlight %}
+**demo.scss** es tu archivo sass, y **demo.css** es el archivo que generara al compilar.
+
+Si deseas saber todas las opciones disponibles, ejecuta.
+{% highlight Console%}
+sass --help
+{% endhighlight %}
 ## Referencias
 - [Sass][2]
 
