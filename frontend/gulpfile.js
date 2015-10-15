@@ -17,5 +17,8 @@ tasks.forEach(function(task){
     task(gulp,path,plugins,config);
 });
 
-gulp.task('server',['jekyll-build','express','browserSync','watch']);
+gulp.task('server',function(){
+	plugins.runSequence('jekyll-build','express','browserSync','watch');
+});
+
 gulp.task('default',['sass']);
