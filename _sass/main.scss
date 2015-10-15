@@ -129,6 +129,7 @@ pre span.lineno {
   padding-right: 10px;
 }
 /******/
+
 pre{
   font-size:12px;
   line-height:18px;
@@ -136,7 +137,9 @@ pre{
   border: 1px solid #d8d8d8;
   padding:5px 10px;
 }
+
 /******/
+
 strong{
   border: 1px solid #d8d8d8;
   color: #cb3837;
@@ -144,8 +147,9 @@ strong{
   font-family:monospace, monospace;
   padding:2px 4px;
   border-radius:3px;
-  vertical-align:bottom;
+  vertical-align:middle;
 }
+
 /**/
 h1,h3,h4{
   color:#424242;
