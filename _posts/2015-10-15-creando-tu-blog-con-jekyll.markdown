@@ -34,3 +34,27 @@ Como se habra dado cuenta, usted usar la gema jekyll directamente de su terminal
 jekyll build
 {% endhighlight %}
 La cual generara su proyecto en **./_site**.
+
+## Estructura directorios
+
+{% highlight Bash %}
+.
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-post-1.markdown
+|   └── 2009-04-26-post-2.markdown
+├── _data
+|   └── members.yml
+├── _site
+├── .jekyll-metadata
+└── index.html
+{% endhighlight %}
