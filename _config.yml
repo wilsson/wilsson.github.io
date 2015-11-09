@@ -1,4 +1,5 @@
 # Site settings
+paginate: 5
 title: wilsson.github.io
 email: wilsonft83@gmail.com
 description: wilson.github.io
