@@ -2,8 +2,9 @@
 layout: post
 title: Creando tu blog con jekyll
 permalink: creando-tu-blog-con-jekyll
+categories: blog
 ---
-Este blog esta construido puramente con jekyll, y que mejor que compartir con ustedes lo que esta herramienta puede lograr.
+Estesa blog esta construido puramente con jekyll, y que mejor que compartir con ustedes lo que esta herramienta puede lograr.
 
 ## ¿Qué es jekyll?
 Jekyll es un generador blog y de sitios estaticos. Se necesita un directorio plantilla que contiene los archivos de
@@ -29,7 +30,7 @@ jekyll serve
 Lo podras ver en **localhost:4000**
 
 ## Uso basico
-Como se habra dado cuenta, usted usar la gema jekyll directamente de su terminal.
+Como se habra dado cuenta, usted puede usar la gema jekyll directamente de su terminal.
 {% highlight Bash %}
 jekyll build
 {% endhighlight %}
