@@ -10,9 +10,9 @@ En el mundo de javascript existen muchas facilidades de programar, el único det
 En javascript el patrón modular emula el concepto de clases, de manera que somos capaces de incluir métodos públicos/privados y propiedades dentro de un único objeto, protegiendo las datos particulares del ámbito global, lo que ayuda a evitar la colisión de nombres de funciones y variables ya definidas a lo largo de nuestro proyecto, o API’s de terceros, a continuación unos conceptos previos para poder entender mejor el patrón modular.
 
 ## Objeto literal
-EL patrón modular se basa en parte en los objetos literales por ende es importante entenderlo.
+El patrón modular se basa en parte en los objetos literales por ende es importante entenderlo.
 Un objeto literal es descrito como cero o más pares nombre/valor, separados por comas entre llaves.
-Los nombres dentro del objeto pueden ser cadenas o identificadores que son seguidas por 2 puntos, dichos objetos también pueden contener otros objetos y funciones.
+Los nombres dentro del objeto pueden ser cadenas o identificadores que son seguidas por 2 puntos, dichos objetos también pueden contener otros objetos entre otros tipos de datos.
 {% highlight JavaScript linenos %}
 var objetoLiteral = {
     /* los objetos literales pueden contener propiedades y métodos */

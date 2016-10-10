@@ -16,14 +16,8 @@ Jekyll tambien pasa a ser un motor detrás de github pages, lo que significa que
 Antes que nada debemos tener instalado nuestra gema para esto debe tener ruby.
 {% highlight Bash %}
 gem install jekyll
-{% endhighlight %}
-{% highlight Bash %}
 jekyll new demoBlog
-{% endhighlight %}
-{% highlight Bash %}
 cd demoBlog
-{% endhighlight %}
-{% highlight Bash %}
 jekyll serve
 {% endhighlight %}
 
